@@ -72,7 +72,7 @@ echo $winner['label'];
 # normal     (94%)
 ```
 
-# Counting Result of Running 10000 times 
+# Counting Result of Running 10000 times
 
 [1] Create test function. (test.php)
 
@@ -214,7 +214,7 @@ function draw() {
         array('rank' => 7),
         array('rank' => 8),
         array('rank' => 9),
-        array('rank' => 10),
+        array('rank' => 10),    // Removed by option
     );
 
     $setting = array(
