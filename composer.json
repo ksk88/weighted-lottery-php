@@ -1,0 +1,16 @@
+{
+    "name": "ksk88/weighted-lottery-php",
+    "description": "weighted-lottery-php is a not equality lottery function. Determine is based on each choice's proportion of the total weight.",
+    "keywords": ["lottery"],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/ksk88/weighted-lottery-php",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "ksk88\\WeightedLotteryPhp": "src/"
+        }
+    }
+}
