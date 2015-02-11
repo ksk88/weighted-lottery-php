@@ -52,7 +52,7 @@ class Lot
         $excluded_tickets = empty($setting['excluded_tickets']) ? array() : $setting['excluded_tickets'];
         $this->NameIdColumn = empty($setting['name_id']) ? $this->NameIdColumn : $setting['name_id'];
 
-            // Filter by thresholds
+        // Filter by thresholds
         $tickets = $this->filterTicketsByConditions($tickets, $threshold_conditions, $excluded_tickets);
 
         // Add weight for weighted lottery
@@ -88,9 +88,11 @@ class Lot
 
     private function isApprovedTicket($ticket, $threshold_conditions, $excluded_ticket_ids)
     {
-        $ticket_id = $ticket[$this->NameIdColumn];
-        if (array_key_exists($ticket_id, $excluded_ticket_ids)) {
-            return false;
+        if (!empty($excluded_ticket_ids)) {
+            $ticket_id = $ticket[$this->NameIdColumn];
+            if (array_key_exists($ticket_id, $excluded_ticket_ids)) {
+                return false;
+            }
         }
 
         foreach ($threshold_conditions as $condition) {

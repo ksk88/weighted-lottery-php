@@ -51,7 +51,7 @@ $ git clone git@github.com:ksk88/weighted-lottery-php.git
 
 # Example
 
-1. Create test function. (test.php)
+[1] Create test function. (test.php)
 
 ```php
 <?php
@@ -110,7 +110,7 @@ $draw = new Draw();
 $draw->exec();
 ```
 
-2. Execute test.php
+[2] Execute test.php
 
 ```sh
 # execute
@@ -126,7 +126,7 @@ array (
 )
 ```
 
-3. Summary count
+[3] Summary count
 
 LABEL | WEIGHT | COUNT
 :-------------:|-------------:|-------------:
@@ -138,5 +138,86 @@ normal_3 | 50 | 1,990
 normal_4 | 50 | 1,915
 normal_5 | 50 | 1,901
 
-*Result is random, but based on each choice's proportion of the total weight.
+**Result is random, but based on each choice's proportion of the total weight.**
 
+# Options
+
+The library has several options. You can easily manipulate your array using options.
+
+## Usage
+
+* test2.php
+```php
+<?php
+require_once './vendor/autoload.php';
+use ksk88\WeightedLotteryPhp\Lot;
+
+$results = summary();
+ksort($results);
+var_dump($results);
+
+function draw() {
+    $tickets = array(
+        array('rank' => 1),
+        array('rank' => 2),
+        array('rank' => 3),
+        array('rank' => 4),
+        array('rank' => 5),
+        array('rank' => 6),
+        array('rank' => 7),
+        array('rank' => 8),
+        array('rank' => 9),
+        array('rank' => 10),
+    );
+
+    $setting = array(
+        'weight_gradient' => 2,
+        'use_order_as_weight' => true,
+        'threshold_conditions' => array(
+            array('name' => 'rank', 'val' => 9,  'sign' => 'lesser_or_equal'),
+        ),
+    );
+
+    $lot = new Lot();
+    $num_picked = 1;
+    $winners = $lot->pickFromWeightedLottery($tickets, $num_picked, $setting);
+
+    $winner = reset($winners);
+    return $winner;
+}
+
+function summary() {
+    $results = array();
+    for ($i = 0; $i < 10000; $i++) {
+
+        // Lottery
+        $winner = draw();
+
+        // Count
+        $count = 0;
+        $label = $winner['rank'];
+        if (array_key_exists($label, $results)) {
+            $count = $results[$label];
+        }
+        $results[$label] = $count + 1;
+    }
+    return $results;
+}
+```
+
+* Result
+
+RANK | COUNT
+:-------------:|-------------:
+1 | 1,492
+2 | 1,398
+3 | 1,318
+4 | 1,189
+5 | 1,070
+6 | 1,038
+7 | 939
+8 | 829
+9 | 727
+10 | *Removed by option
+
+**The difference frequency of occurrence between the top and bottom is roughly doubled.**
