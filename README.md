@@ -1,11 +1,58 @@
 weighted-lottery-php
 =============
 
-weighted-lottery-php is PHP library. This is a not equality shuffle function. Determine is based on each choice's proportion of the total weight.
+weighted-lottery-php provides a not equality shuffle function rather than a just shuffle function. Determine is based on each choice's proportion of the total weight.
+
+# Installation
+
+To install weighted-lottery-php with Composer, just add the following to your composer.json file:
+
+```js
+// composer.json
+{
+    "require-dev": {
+        "ksk88/weighted-lottery-php": "dev-master"
+    }
+}
+```
+
+Then, you can install the new dependencies by running Composer’s update command from the directory where your `composer.json` file is located:
+
+```sh
+# install
+$ php composer.phar install --dev
+# update
+$ php composer.phar update ksk88/weighted-lottery-php --dev
+
+# or you can simply execute composer command if you set it to
+# your PATH environment variable
+$ composer install --dev
+$ composer update ksk88/weighted-lottery-php --dev
+```
+
+You can see this library on [Packagist](https://packagist.org/packages/ksk88/weighted-lottery-php).
+
+Composer installs autoloader at `./vendor/autoloader.php`. If you use weighted-lottery-php in your php script, add:
+
+```php
+require_once 'vendor/autoload.php';
+```
+
+If you use Symfony2, autoloader has to be detected automatically.
+
+Or you can use git clone command:
+
+```sh
+# HTTP
+$ git clone https://github.com/ksk88/weighted-lottery-php.git
+# SSH
+$ git clone git@github.com:ksk88/weighted-lottery-php.git
+```
 
 # Example
 
-- test.php
+1. Create test function. (test.php)
+
 ```php
 <?php
 
@@ -63,7 +110,8 @@ $draw = new Draw();
 $draw->exec();
 ```
 
-- Result
+2. Execute test.php
+
 ```sh
 # execute
 $ php test.php
@@ -78,12 +126,17 @@ array (
 )
 ```
 
-LABEL | COUNT | WEIGHT
+3. Summary count
+
+LABEL | WEIGHT | COUNT
 :-------------:|-------------:|-------------:
-super_rare | 46 | 1
-rare | 200 | 5
-normal_1 | 1,962 | 50
-normal_2 | 1,986 | 50
-normal_3 | 1,990 | 50
-normal_4 | 1,915 | 50
-normal_5 | 1,901 | 50
+super_rare | 1 | 46
+rare | 5 | 200
+normal_1 | 50 | 1,962
+normal_2 | 50 | 1,986
+normal_3 | 50 | 1,990
+normal_4 | 50 | 1,915
+normal_5 | 50 | 1,901
+
+*Result is random, but based on each choice's proportion of the total weight.
+
