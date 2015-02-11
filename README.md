@@ -5,7 +5,7 @@ PHP library
 
 # Example
 
-test.php
+- test.php
 ```php
 <?php
 
@@ -63,15 +63,27 @@ $draw = new Draw();
 $draw->exec();
 ```
 
+- Result
 ```sh
+# execute
 $ php test.php
 array (
+  'super_rare' => 46,
+  'rare' => 200,
   'normal_1' => 1962,
   'normal_2' => 1986,
   'normal_3' => 1990,
   'normal_4' => 1915,
   'normal_5' => 1901,
-  'rare' => 200,
-  'super_rare' => 46,
 )
 ```
+
+LABEL | COUNT | WEIGHT
+:-------------:|-------------:|-------------:
+super_rare | 46 | 1
+rare | 200 | 5
+normal_1 | 1,962 | 50
+normal_2 | 1,986 | 50
+normal_3 | 1,990 | 50
+normal_4 | 1,915 | 50
+normal_5 | 1,901 | 50
