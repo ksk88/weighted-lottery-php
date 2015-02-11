@@ -26,7 +26,7 @@ class Lot
      * @param array  $setting   e.g. array( 'weight_gradient'=>2, 'use_order_as_weight'=>false, 'name_weight_source'=>'weight', 'threshold_conditions' => array( array('name'=>'layer', 'val'=>10, 'sign'=>'greater_or_equal') ), 'excluded_tickets'=>array(1,2) )
      *                          [weight_gradient]      -> Optional. You can adjust the probability difference between max and min.
      *                          [use_order_as_weight]  -> Optional. You can use order as weight.
-     *                          [name_weight_source]   -> Optional. Default is 'weight'. Weight is taken by this name as key .
+     *                          [name_weight_source]   -> Optional. Default is 'weight'. Weight is taken by this name as key.
      *                          [threshold_conditions] -> Optional.
      *                                                    [name] -> Required. Name of key with a value to cut back.
      *                                                    [val]  -> Required. Threshold value.
