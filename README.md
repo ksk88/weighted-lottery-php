@@ -144,31 +144,31 @@ normal_5 | 50 | 1,901
 
 The library has several options. You can easily manipulate your array using options.
 
-*weight_gradient
- *Difference frequency of occurrence between the top and bottom.
- *So when set '1', the function will operate as normal shuffle.
- *Default is null.
+* weight_gradient
+ * Difference frequency of occurrence between the top and bottom.
+ * So when set '1', the function will operate as normal shuffle.
+ * Default is null.
 
-*use_order_as_weight
- *Use order as the weight of lottery.
- *Default is false.
+* use_order_as_weight
+ * Use order as the weight of lottery.
+ * Default is false.
 
-*name_weight_source
- *Weight is taken by this name as key.
- *Default is 'weight'.
+* name_weight_source
+ * Weight is taken by this name as key.
+ * Default is 'weight'.
 
-*threshold_conditions
- *Cut back tickets by any conditions.
- *Default is null.
+* threshold_conditions
+ * Cut back tickets by any conditions.
+ * Default is null.
 
-*name_id
- *Use when exclude tickets.
- *Default is 'ticket_id'.
+* name_id
+ * Use when exclude tickets.
+ * Default is 'ticket_id'.
 
-*excluded_tickets
- *Exclude tickets by ID.
- *ID is taken on the basis of 'name_id' as key.
- *Default is array().
+* excluded_tickets
+ * Exclude tickets by ID.
+ * ID is taken on the basis of 'name_id' as key.
+ * Default is array().
 
 ## Usage
 
