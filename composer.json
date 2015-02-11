@@ -1,7 +1,7 @@
 {
     "name": "ksk88/weighted-lottery-php",
-    "description": "weighted-lottery-php provides a not equality shuffle function rather than a just shuffle function. Determine is based on each choice's proportion of the total weight.",
-    "keywords": ["lottery", "random", "shuffle"],
+    "description": "weighted-lottery-php provides a not equality shuffle function. Determine is based on each choice's proportion of the total weight.",
+    "keywords": ["gacha", "random", "shuffle", "lottery", "drawing"],
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/ksk88/weighted-lottery-php",

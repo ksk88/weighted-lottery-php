@@ -1,7 +1,7 @@
 weighted-lottery-php
 =============
 
-weighted-lottery-php provides a not equality shuffle function rather than a just shuffle function. Determine is based on each choice's proportion of the total weight.
+weighted-lottery-php provides a not equality shuffle function. Determine is based on each choice's proportion of the total weight.
 
 # Installation
 
