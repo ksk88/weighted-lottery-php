@@ -1,7 +1,7 @@
 weighted-lottery-php
 =============
 
-PHP library
+weighted-lottery-php is PHP library. This is a not equality lottery function (e.g. ```shuffle()```). Determine is based on each choice's proportion of the total weight.
 
 # Example
 
