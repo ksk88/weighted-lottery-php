@@ -51,13 +51,34 @@ $ git clone git@github.com:ksk88/weighted-lottery-php.git
 
 # Example
 
+```php
+<?php
+require_once './vendor/autoload.php';
+use ksk88\WeightedLotteryPhp\Lot;
+
+$tickets = array(
+    array('weight' => 1,  'label' => 'super_rare'),
+    array('weight' => 5,  'label' => 'rare'),
+    array('weight' => 94, 'label' => 'normal'),
+);
+
+$lot = new Lot();
+$winners = $lot->pickFromWeightedLottery($tickets);
+$winner = reset($winners);
+
+echo $winner['label'];
+# super_rare (1%)
+# rare       (5%)
+# normal     (94%)
+```
+
+# Counting Result of Running 10000 times 
+
 [1] Create test function. (test.php)
 
 ```php
 <?php
-
 require_once './vendor/autoload.php';
-
 use ksk88\WeightedLotteryPhp\Lot;
 
 class Draw
@@ -172,7 +193,7 @@ The library has several options. You can easily manipulate your array using opti
 
 ## Usage
 
-* test2.php
+* option_usage.php
 ```php
 <?php
 require_once './vendor/autoload.php';
